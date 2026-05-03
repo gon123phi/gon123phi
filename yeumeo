@@ -671,7 +671,7 @@ function sendWish() {
     display.style.opacity = '1';
   }, 600);
 }
-</scriptconst music = document.getElementById('bgMusic');
+</script const music = document.getElementById('bgMusic');
 let musicStarted = false;
 
 function startMusic() {
