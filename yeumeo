@@ -570,7 +570,7 @@ function openEnvelope() {
   const env = document.getElementById('envelope');
   env.classList.toggle('open');
 
-  startMusic(); // 👉 thêm dòng này
+  startMusic(); //  thêm dòng này
 }
 
 // Reasons
@@ -671,7 +671,19 @@ function sendWish() {
     display.style.opacity = '1';
   }, 600);
 }
-</script>const music = document.getElementById('bgMusic');
+</scriptconst music = document.getElementById('bgMusic');
+let musicStarted = false;
+
+function startMusic() {
+  if (!musicStarted) {
+    music.play().then(() => {
+      musicStarted = true;
+    }).catch(() => {});
+  }
+}
+
+document.addEventListener('click', startMusic);
+document.addEventListener('touchstart', startMusic); >const music = document.getElementById('bgMusic');
 
 // đảm bảo chỉ bật 1 lần
 let musicStarted = false;
@@ -687,7 +699,9 @@ function startMusic() {
 // iPhone yêu cầu user interaction → gắn vào click
 document.addEventListener('click', startMusic);
 document.addEventListener('touchstart', startMusic);
-</body>
+</body><audio id="bgMusic" loop playsinline>
+  <source src="giothi.mp4" type="audio/mp4">
+</audio>
 <audio id="bgMusic" loop playsinline>
   <source src="giothi.mp4" type="audio/mp4">
 </audio>
